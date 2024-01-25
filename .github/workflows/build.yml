@@ -18,15 +18,15 @@ jobs:
         - Ubuntu-18.04
         - Ubuntu-20.04
         nodejs:
-        - 16
+        - 20
       fail-fast: false
     steps:
     - name: Turn off auto-crlf
       run: git config --global core.autocrlf false
     - name: Checkout source codes
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Install Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.nodejs }}
     - name: Install dependencies
